@@ -1,0 +1,116 @@
+{
+  "version": 2,
+  "style": "1990s bootleg photocopied UI; chipped smudged ink double frame, pale gray paper, faint vertical scans, muted pink selection",
+  "canvas": [
+    640,
+    480
+  ],
+  "dialogue_position": [
+    0,
+    336
+  ],
+  "choices_position": [
+    278,
+    197
+  ],
+  "row_start_position": [
+    286,
+    204
+  ],
+  "row_pitch": 31,
+  "assets": [
+    {
+      "name": "dialogue_panel",
+      "size": [
+        640,
+        144
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "choice_panel",
+      "size": [
+        360,
+        142
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "selected_row",
+      "size": [
+        344,
+        30
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "unselected_row",
+      "size": [
+        344,
+        30
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "continue_arrow",
+      "size": [
+        20,
+        14
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "choice_cursor",
+      "size": [
+        14,
+        18
+      ],
+      "transparent_outside": true
+    }
+  ],
+  "preview": {
+    "name": "dialogue_example",
+    "size": [
+      640,
+      480
+    ],
+    "opaque": true,
+    "background": "existing original witch_cabin_640x480.png composition, included only inside this example"
+  },
+  "font": "fonts/DotGothic16-Regular.ttf; SIL OFL 1.1; retain fonts/OFL.txt when distributing",
+  "font_style": {
+    "case": "UPPERCASE",
+    "body_size": 20,
+    "choice_size": 18,
+    "ink_color": "#111013",
+    "synthetic_embolden": "0.92 px outline in SVG preview; try outline_size=1 in Godot",
+    "optional_baseline_jitter_px": 0.48
+  },
+  "godot_label_theme": {
+    "font_size": 18,
+    "font_color": "#111013",
+    "font_outline_color": "#111013",
+    "outline_size": 1
+  },
+  "nine_patch_margins": {
+    "dialogue_panel": [
+      9,
+      9,
+      9,
+      9
+    ],
+    "choice_panel": [
+      9,
+      9,
+      9,
+      9
+    ]
+  },
+  "notes": [
+    "Blank components have no text baked in.",
+    "Editable SVG accompanies every PNG.",
+    "Selected strip is translucent so the panel paper can show through.",
+    "No repeating decorative zigzag border. Noise stays on the frame and faint scanlines.",
+    "Original asset kit is unchanged."
+  ]
+}

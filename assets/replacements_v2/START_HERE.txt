@@ -1,0 +1,26 @@
+FEVER DREAMS — REPLACEMENT ASSETS V2
+
+MAIN PNG FILES
+characters/ayush_grain_closed.png — magenta/acid-yellow floating head, coarse grain
+characters/ayush_grain_open.png — matching design with hinged attack mouth
+characters/patient_grain_sad.png — cyan/violet/orange floating head, subdued expression
+characters/purple_performer_head.png — purple low-poly animatronic head
+props/music_box_open.png — wooden hinged music box with brass cylinder and winding key
+props/music_box_closed.png — closed music box
+ui/dialogue_panel.png — blank battered dialogue panel
+ui/choice_panel.png — blank options panel
+ui/selected_row.png / unselected_row.png — separate option backgrounds
+ui/choice_cursor.png / continue_arrow.png — separate indicators
+ui/dialogue_example.png — layout example, with sample text baked in
+
+Natural-color head bases are included as optional alternatives.
+All character and prop PNGs have transparency. These are flat sprites with a low-poly rendered look, not 3D models.
+Sprites are individual illustrations, not a registered animation sheet. Align/scale the open and closed states in your scene before swapping them.
+Keep PNG alpha on import. Use nearest-neighbor filtering for the intended rough pixels.
+UI is designed around a 640 x 480 canvas. Blank panels do not contain text. See ui/TYPE_SETTINGS.txt for font weight and layout. Editable SVG sources are included.
+The original asset pack remains available for backgrounds, textures, music and sound effects. This folder contains the requested replacement files only.
+
+PROVENANCE
+Character and music-box PNGs created with the built-in image-generation tool. Identity references were supplied by the user. Prompts are recorded in notes/.
+UI components are original editable vector artwork. The example incorporates the earlier cabin composition as a preview backdrop.
+DotGothic16 is bundled under SIL Open Font License 1.1; retain ui/fonts/OFL.txt when distributing the font.

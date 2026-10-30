@@ -23,6 +23,7 @@ static func attach(parent: Node, world: Node) -> SubViewport:
 	effects.name = "WorldEffects"
 	viewport.add_child(effects)
 	var overlay := ColorRect.new()
+	overlay.set_script(preload("res://scripts/world_effects.gd"))
 	overlay.size = Vector2(320, 180)
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var material := ShaderMaterial.new()

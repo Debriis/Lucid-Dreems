@@ -11,11 +11,12 @@ config_version=5
 [application]
 
 config/name="THE LAST LULLABY"
-run/main_scene="res://scenes/TherapyRoom.tscn"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+run/main_scene="res://scenes/MainMenu.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
+
 Game="*res://scripts/game.gd"
 UI="*res://scripts/ui.gd"
 Story="*res://scripts/story.gd"
@@ -30,7 +31,7 @@ window/stretch/mode="canvas_items"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0.035, 0.025, 0.045, 1)

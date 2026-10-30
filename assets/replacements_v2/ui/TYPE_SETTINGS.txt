@@ -1,0 +1,39 @@
+FEVER DREAMS / V2 STAMPED DIALOGUE TYPE
+
+Included font: fonts/DotGothic16-Regular.ttf
+License: SIL Open Font License 1.1. Retain fonts/OFL.txt with the font.
+
+The PNG panels are blank. All text in dialogue_example.png is demonstration
+content, not baked into the reusable panel assets.
+
+Reproduce the thick ink appearance in Godot's Label theme overrides:
+  Font: the included DotGothic16-Regular.ttf
+  Font Size: 20 for dialogue; 18 for choices
+  Font Color: #111013
+  Font Outline Color: #111013 (same color as the letters)
+  Outline Size: 1
+  Text: UPPERCASE
+  Choice alignment: left
+
+At the native 640 x 480 canvas:
+  Dialogue panel: (0,336), size 640 x 144
+  Dialogue text first baseline in the example: (12,368)
+  Dialogue example line spacing: 30 pixels
+  Choice panel: (278,197), size 360 x 142
+  Selected row: (286,204), size 344 x 30
+  Choice text first baseline: (291,226)
+  Choice row pitch: 31 pixels
+
+Use nearest-neighbor scaling for the panel PNGs when enlarging the canvas.
+For nine-patch use, preserve 9 pixels on each edge of each panel.
+
+The editable example SVG uses a 0.92-pixel same-color stroke around the font
+outlines, with tiny per-letter baseline/width variations to suggest imperfect
+stamped printing. Godot's 1-pixel same-color font outline reproduces the weight;
+the tiny letter variations are optional.
+
+The reference-style selected row is muted pink. The heavy chipped border is
+irregular ink, not a repeating zigzag. Noise is concentrated at the frame and
+faint vertical scan lines so dialogue remains readable.
+
+No game scripts are included. The original asset kit remains unchanged.

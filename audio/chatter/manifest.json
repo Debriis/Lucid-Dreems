@@ -1,0 +1,189 @@
+{
+  "generator": "tools/generate_character_chatter.py",
+  "sample_rate": 24000,
+  "origin": "Original mathematical formant synthesis; no source recording or imitation",
+  "profiles": {
+    "DOCTOR": {
+      "pitch": 150,
+      "durations": [
+        0.12,
+        0.14,
+        0.11,
+        0.15,
+        0.13,
+        0.125
+      ],
+      "description": "Dry mid-low nasal mutter; short voiced consonants, warm formants, restrained pitch."
+    },
+    "RUE": {
+      "pitch": 390,
+      "durations": [
+        0.085,
+        0.095,
+        0.08,
+        0.105,
+        0.09,
+        0.1
+      ],
+      "description": "High springy toy syllables; bent pitch, double pulses, metallic modulation, crunchy edges."
+    },
+    "AYUSH": {
+      "pitch": 91,
+      "durations": [
+        0.17,
+        0.185,
+        0.16,
+        0.195,
+        0.175,
+        0.18
+      ],
+      "description": "Low reversed formant syllables; rough subharmonics, breath, flutter, granular distortion."
+    }
+  },
+  "syllables": [
+    {
+      "character": "DOCTOR",
+      "wav": "doctor_01.wav",
+      "resource": "doctor_01.tres",
+      "duration": 0.12,
+      "fundamental_hz": 136.5,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "DOCTOR",
+      "wav": "doctor_02.wav",
+      "resource": "doctor_02.tres",
+      "duration": 0.14,
+      "fundamental_hz": 157.5,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "DOCTOR",
+      "wav": "doctor_03.wav",
+      "resource": "doctor_03.tres",
+      "duration": 0.11,
+      "fundamental_hz": 147.0,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "DOCTOR",
+      "wav": "doctor_04.wav",
+      "resource": "doctor_04.tres",
+      "duration": 0.15,
+      "fundamental_hz": 171.0,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "DOCTOR",
+      "wav": "doctor_05.wav",
+      "resource": "doctor_05.tres",
+      "duration": 0.13,
+      "fundamental_hz": 129.0,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "DOCTOR",
+      "wav": "doctor_06.wav",
+      "resource": "doctor_06.tres",
+      "duration": 0.125,
+      "fundamental_hz": 153.0,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "RUE",
+      "wav": "rue_01.wav",
+      "resource": "rue_01.tres",
+      "duration": 0.085,
+      "fundamental_hz": 354.9,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "RUE",
+      "wav": "rue_02.wav",
+      "resource": "rue_02.tres",
+      "duration": 0.095,
+      "fundamental_hz": 409.5,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "RUE",
+      "wav": "rue_03.wav",
+      "resource": "rue_03.tres",
+      "duration": 0.08,
+      "fundamental_hz": 382.2,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "RUE",
+      "wav": "rue_04.wav",
+      "resource": "rue_04.tres",
+      "duration": 0.105,
+      "fundamental_hz": 444.6,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "RUE",
+      "wav": "rue_05.wav",
+      "resource": "rue_05.tres",
+      "duration": 0.09,
+      "fundamental_hz": 335.4,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "RUE",
+      "wav": "rue_06.wav",
+      "resource": "rue_06.tres",
+      "duration": 0.1,
+      "fundamental_hz": 397.8,
+      "peak_dbfs": -4.15
+    },
+    {
+      "character": "AYUSH",
+      "wav": "ayush_01.wav",
+      "resource": "ayush_01.tres",
+      "duration": 0.17,
+      "fundamental_hz": 82.81,
+      "peak_dbfs": -4.16
+    },
+    {
+      "character": "AYUSH",
+      "wav": "ayush_02.wav",
+      "resource": "ayush_02.tres",
+      "duration": 0.185,
+      "fundamental_hz": 95.55,
+      "peak_dbfs": -4.16
+    },
+    {
+      "character": "AYUSH",
+      "wav": "ayush_03.wav",
+      "resource": "ayush_03.tres",
+      "duration": 0.16,
+      "fundamental_hz": 89.18,
+      "peak_dbfs": -4.16
+    },
+    {
+      "character": "AYUSH",
+      "wav": "ayush_04.wav",
+      "resource": "ayush_04.tres",
+      "duration": 0.195,
+      "fundamental_hz": 103.74,
+      "peak_dbfs": -4.16
+    },
+    {
+      "character": "AYUSH",
+      "wav": "ayush_05.wav",
+      "resource": "ayush_05.tres",
+      "duration": 0.175,
+      "fundamental_hz": 78.26,
+      "peak_dbfs": -4.16
+    },
+    {
+      "character": "AYUSH",
+      "wav": "ayush_06.wav",
+      "resource": "ayush_06.tres",
+      "duration": 0.18,
+      "fundamental_hz": 92.82,
+      "peak_dbfs": -4.16
+    }
+  ]
+}

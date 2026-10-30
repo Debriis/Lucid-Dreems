@@ -1,115 +1,72 @@
 # THE LAST LULLABY
 
-A playable psychological horror game-jam prototype for **Godot 4.7.2**. The
-existing first-person renderer, controller, collisions, supplied FEVER DREAMS
-assets, music and sound effects have been extended rather than replaced.
+A local Godot psychological-horror jam game. You are the sleep doctor, entering a patient's recurring nightmare. Four music boxes hold the dream together. Unwind them while Rue protects you from Ayush and the house's countdown.
 
-## Play
+**[Download the Windows game](https://github.com/sammy-ryed/the-last-lullaby/releases/latest)** — run `TheLastLullaby.exe`. The Godot project, character art, textures, music, voices, tools and tests are included in this repository. Built from [Debriis/Lucid-Dreems](https://github.com/Debriis/Lucid-Dreems), with its history and asset credits retained.
 
-Import `project.godot` in Godot 4.7.2, allow asset import, and press **F5**.
-No manual scene assembly or extra runtime dependencies are required.
+## Run on this laptop
 
-- **WASD:** walk / strafe. **Mouse:** horizontal and vertical look.
-- **Q/C** or **left/right arrows:** keyboard turning; up/down arrows move.
-- **E / Enter / Space:** interact or continue dialogue.
-- **W/S or arrows:** select a dialogue response; **E/Enter** confirms.
-- **Left click:** select a response or advance dialogue. During gameplay,
-  left click recaptures the mouse after it has been released.
-- **Escape:** release the mouse. Dialogue also releases it automatically.
-  Finishing dialogue recaptures it and resumes the camera and movement.
-- **R:** begin again after the final END screen.
+- Open `project.godot` in Godot **4.6.1** and press **F5**. The project starts at the title menu.
+- The Windows export preset writes `../Build/TheLastLullaby.exe`.
+- No network, runtime TTS installation, or extra game dependencies are required after importing/exporting.
 
-Mouse sensitivity is exported as `mouse_sensitivity` in
-`scripts/first_person_player.gd` (default 0.0028 radians per relative pixel).
-Mouse X rotates only the body yaw. Mouse Y changes Camera3D pitch, clamped to
--80/+80 degrees. Camera yaw and roll remain zero. Movement stays horizontal,
-so looking up or down does not change speed or collision behaviour.
+## Controls and objective
 
-## Sharp UI, low-resolution world
+- **WASD** to move; **mouse** to look. **Q/C** or left/right arrows turn; up/down arrows move.
+- **E / Enter / Space** to inspect, speak, open doors, or begin unwinding a music box.
+- Find and unwind **four music boxes**, one in each dream room. Approach a box, look at it, and press E. The camera shows the lid opening and the key rotating backward for two seconds. Hear the memory, then follow the updated objective to the exit and press E.
+- Read **three optional message scraps**, one in each of the first three rooms. They reveal why the patient stopped answering Maya. Finding some or all of them changes his final response; they are not required to finish.
+- **Rue / The Performer** is the patient's childhood teddy bunny, transformed into a purple animatronic. He is visible at the dream entrance. Stay within his shield to block damage. After finding a scrap, ask him to keep Ayush busy: he distracts the witch for **eight seconds, once per room**.
+- Each room starts with **100 health and 120 seconds**. A witch attack costs **25 health**; an expired clock costs **15 health every five seconds** outside Rue's protection. Talking, reading, unwinding and pausing stop the clock. Entering the next room restores health and time.
+- **Ayush / The Keeper** has her own chamber and pursues you through the house. A catch gives a brief face/sound scare and returns you to that room's entry checkpoint, preserving boxes and notes, with a short protection window. At zero health, choose Retry Room or Main Menu. Occasional shorter glimpses happen only during exploration, at most once per room.
+- **W/S or arrows** select dialogue/menu options; **E/Enter** or left click confirms.
+- **Escape** opens pause. Resume preserves the current speech position and unwind progress.
+- **R** begins another session after END. Restart and Main Menu are also available from pause.
 
-The main viewport is **1280 x 720**, using canvas_items stretching. The UI is a
-root CanvasLayer at that resolution, with a clean antialiased 26px dialogue
-font, 25px choice buttons, 24px HUD and generous padding. The supplied retro
-ivory panel remains; text is rendered directly at native resolution.
+The title and pause menus include How to Play, Settings and Credits. Master, voice, music and sound-effect controls persist under Godot's `user://settings.cfg`. Reduced Effects disables random glimpses and the strongest world distortion, reduces incidental movement, and lowers scare audio. Scares never interrupt dialogue, menus or unwinding.
 
-Only the 3D world goes into `WorldViewport`, a **320 x 180 SubViewport** with its
-own World3D. `WorldDisplay` enlarges that texture using nearest filtering.
-Dithering/fog are on world materials, and the distortion/chromatic shader is
-inside that SubViewport's `WorldEffects` layer. No retro shader touches the UI.
-Input is routed from the native UI viewport to the existing player controller,
-so mouse sensitivity and choice coordinates are independent of world resolution.
+## Presentation and audio
 
-## Canonical story and progression
+The patient sits directly opposite the psychiatrist's desk in the appointment and waking scenes. The V2 sad floating-head PNG sits over an intentionally angular seated figure and moves subtly with the measured speech envelope. This is a stylized talking portrait, not phoneme lip-sync.
 
-The player is a psychotherapist who can enter dreams. The patient has not slept
-properly for weeks. A purple Performer dances beside a music box in a witch's
-cabin. He always wakes before the music ends.
+All active dream character art uses the supplied V2 PNG heads; the witch alternates closed/open jaw states and Rue has faceted purple ears and an articulated metal body. Their names appear in-world and in dialogue. Music boxes use the V2 wooden closed/open sprites, with a separately animated key and progress indication. Four completion slots, room-specific directions, health and a room clock stay visible during exploration. The first room has timber beams, a crooked door, an iron stove and a green cauldron to identify it as the witch's cabin; the second belongs to Ayush.
 
-There are now **four separate music-box states and one ending**. `Story`, an
-autoload in `scripts/story.gd`, owns the stage, box states, room unlock and
-ending phase. Scenes never maintain their own copies of canonical progress.
-An activation first reserves that box as `unwinding`; it cannot be activated
-again. Only the final dialogue callback changes it to `complete` and unlocks
-the next exit. The old three-memory/two-ending route is no longer active.
+The 3D world is rendered at 320 x 180 and enlarged with nearest filtering; the 1280 x 720 UI remains readable. Chipped paper panels, detached speaker/choice pieces, pink/acid accents and three fonts replace the default text treatment: DotGothic16 for dialogue, Special Elite for clinical labels, Rubik Glitch for titles. The original structural room textures remain in use.
 
-| Scene | Playable sequence |
-| --- | --- |
-| TherapyRoom | Appointment; three keyboard/mouse questions and patient responses; occasional double clock tick; dream entry. |
-| WitchCabin | Performer greeting and choices; first box in performance room; forced-smile memory; exit sign rewritten; witch revealed. |
-| DiningRoom | Long table, chairs facing walls, closed boxes replacing food; second memory and choices; faces replace the plates; short witch pursuit. |
-| SchoolHall | Wooden locker doors and wallpaper ceiling; marked door; third memory and supportive choices; denial overwrites testimony; escape back toward the cabin. |
-| Theatre | The central cabin becomes a small theatre. The seated Performer explains its protective role. Fourth box in its lap; all music/ambience stop; final exit opens. |
-| Ending | Doorway recedes; cabin folds; witch erases three affirmations with NOTHING HAPPENED. Only I'M STILL LISTENING. remains. The doctor dies inside the dream. Consultation room, flatline, PATIENT: You heard me. Cut to black, one click, END. |
+Twenty-four patient lines are included as local WAVs using synthetic **Microsoft David Desktop**, lightly slowed/pitched and textured. They are not a clone of the photographed person's voice. Advancing stops the previous line, pause holds playback, and music ducks during speech. The licensed music-box tracks play in the menu/dream, slow and reverse during unwinding, and stop after the fourth box. The final patient line still plays after the dream falls silent. Two original scare stingers use the SFX/master volume settings and do not stack or clip. Normal Quit and window close release audio before exiting.
 
-The Performer and patient have separate speaker labels and roles. The Performer
-is protective, not an evil combat enemy. The witch represents denial and the
-punishment of speaking. Abuse is implied only through the supplied non-graphic
-dialogue. Chases last eight seconds, are slower than the player, and have no
-combat or damage system. The final death is a scripted non-graphic ending.
+Everyone else speaks in original Animalese-like syllables assembled to the subtitle's rhythm. The doctor has a dry, lower mutter, Rue a high mechanical chatter, and Ayush a rough low voice with reversed syllables. These share the voice-volume and pause/advance controls; they never animate the patient's portrait. The subtitles remain the source of the actual words.
 
-The performance room has a physical window opening into the adjoining interior.
-Each subsequent room reuses the existing textured grid builder with a different
-layout. The school box is behind the marked doorway; open it with E. Exits show
-a sign and accept E or walking into the threshold once unlocked.
+## Story and implementation
 
-## Audio and assets
+The appointment leads through the witch's cabin, Ayush's chamber, school hall and theatre, then a single ending. The patient keeps saying "I'm fine" and withdrawing from a friend who saved him a slice of birthday cake. Rue's comforting song has become a way to avoid answering; Ayush keeps the doors locked so nobody can reject him. Rue realizes that keeping someone safe must also mean helping them leave, and protects the doctor as each box opens another door. The doctor dies inside the dream, the patient wakes, and the final line remains **"You heard me."** Finding the notes adds a small, concrete intention to answer his friend rather than an instant cure. Dialogue choices get different replies without adding more rooms or a long branching plot.
 
-All 576 original supplied files remain under `assets/fever_dreams/`, with their
-licenses and provenance. Actual wallpaper, wood, tiles, ceilings, frames and
-doors are used on navigable geometry. The performer and witch use the supplied
-GLBs. The antique music-box cutout is placed on a wooden table or in the
-Performer's lap. Room-background images are only used for the consultation
-cinematics and the impossible office doorway, never as the dream environment.
+`Story` owns the box states: `unwinding`, `remembering`, `complete`, and the three note IDs. A box reserves its ID before animation, cannot be activated twice, and unlocks the next exit only after the memory conversation. The last exit requires all four completions. Restart clears both boxes and notes.
 
-Winding, rattle and dream cues remain connected. Music-box unwinding lowers
-pitch, plays a genuinely reversed phrase, and stops. `audio/unwind_reverse.wav`
-is derived from the supplied spooky waltz; `tools/render_reverse.gd` recreates
-it with Godot's audio decoder. The original WAV and all supplied OGGs are kept.
-The fourth box calls centralized silence; the ending's final click plays once
-without starting a melody. CC0 music/texture and model credits remain in
-`assets/fever_dreams/CREDITS.md`; the included unused font retains its OFL file.
+Scene transitions are generation-checked: repeated interaction cannot cancel a fade, pause freezes it, and returning to the menu cancels the old transition. Audio has matching cancellation so an abandoned unwind cannot restart its song later.
 
-## Verification
+## Validation
 
-Validated in Godot **4.7.2**: **67 checks passed** in both headless and rendered
-OpenGL Compatibility runs, with no runtime errors or warnings. Startup, scene
-resource paths and the original lullaby checksum were checked separately.
+The canonical suite exercises startup, keyboard/mouse choices, movement/collision, four-room progression, timed unwinding, duplicate protection, notes, Rue's shield/distraction, witch damage, room countdowns, health restoration, both lethal-catch and timeout retries, random-scare gating, pause/resume, objectives, V2 sprites, final silence, ending and reset. Presentation checks cover the centered patient, spoken-line switching, title/pause transitions, entry bunny visibility, note layout, catch presentation and actual timeout/retry flow. Separate audio checks cover distinct character chatter, scare duration/volume/pause/silence and graceful shutdown.
 
 ```powershell
 godot --headless --path . --editor --import --quit
 godot --headless --path . --fixed-fps 60 res://tests/Smoke.tscn
-# Run the same route with graphics and native-resolution screenshots:
 godot --path . --fixed-fps 60 res://tests/Smoke.tscn -- --capture
+godot --path . --fixed-fps 60 res://tests/PresentationReview.tscn -- --capture
+godot --headless --path . res://tools/AudioChatterSmoke.tscn
+godot --headless --path . res://tools/AudioScareSmoke.tscn
+godot --headless --path . --export-release "Windows Desktop" ../Build/TheLastLullaby.exe
 ```
 
-`tests/Smoke.tscn` selects `tests/canonical_smoke.gd`. It checks native UI sizing,
-text wrapping, keyboard and mouse choices, yaw/pitch/clamps, no roll, cursor
-release/recapture, movement, collisions, interaction targets, four box IDs,
-duplicate protection, dialogue locks, room order, chases, silence, exact final
-response, final patient line, END and reset. Historical tests are retained but
-are not the active test entry point.
+Review captures are written under `.tools/captures` and `.tools/review` and are excluded from version control. Historical prototype scripts and original assets remain available but are not the startup route.
 
-Captures named `assets/Current-*.png` come from the actual running game. Older
-FP-*.png images and the original environment-builder sources are historical.
-Prototype limits: fixed-height grid geometry, simplified seated character poses,
-short scripted chases, no save system, and a scripted ending rather than combat.
+## Sources
+
+- Original project: https://github.com/Debriis/Lucid-Dreems
+- Supplied V2 archive is extracted under `assets/replacements_v2`; its source prompts and font license are retained.
+- Original asset provenance: `assets/fever_dreams/CREDITS.md`.
+- New font provenance/licenses: `assets/fonts/SOURCES.md` and adjacent license files.
+- Audio source, speech processing and reproduction steps: `audio/README.md` and `tools/generate_patient_voice.ps1` / `tools/voice_envelopes.py`.
+
+This is still a short jam game: fixed-height grid environments, stylized sprite actors and scripted pursuits/ending; no save system or combat.
