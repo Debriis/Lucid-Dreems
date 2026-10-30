@@ -1,0 +1,10 @@
+Music Box, Swiss, ca. 1820.
+The Metropolitan Museum of Art, object number 1976.285.30a, b.
+Gift of Murtogh D. Guinness, 1976.
+
+The museum marks the image Public Domain.
+The museum's Open Access statement permits unrestricted commercial and noncommercial reuse without permission or fee.
+
+Object page: https://www.metmuseum.org/art/collection/search/505671
+Image: https://collectionapi.metmuseum.org/api/collection/v1/iiif/505671/1022531/main-image
+Local original: music_box_original.jpg

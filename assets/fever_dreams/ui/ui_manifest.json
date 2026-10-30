@@ -1,0 +1,95 @@
+{
+  "style": "rough ivory panels, distressed near-black double borders, muted pink selection",
+  "coordinate_canvas": [
+    640,
+    480
+  ],
+  "dialogue_position": [
+    8,
+    344
+  ],
+  "choice_position_four_rows": [
+    330,
+    194
+  ],
+  "font": "DotGothic16-Regular.ttf (SIL OFL 1.1; supplied in ../fonts)",
+  "font_sizes": {
+    "speaker": 12,
+    "body": 16,
+    "body_long": 14,
+    "choices": 14
+  },
+  "nine_patch_margins": {
+    "dialogue_panel": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "choice_panel": [
+      10,
+      10,
+      10,
+      10
+    ]
+  },
+  "assets": [
+    {
+      "name": "dialogue_panel",
+      "size": [
+        624,
+        128
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "choice_panel",
+      "size": [
+        302,
+        140
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "selected_row",
+      "size": [
+        288,
+        30
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "unselected_row",
+      "size": [
+        288,
+        30
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "continue_arrow",
+      "size": [
+        20,
+        14
+      ],
+      "transparent_outside": true
+    },
+    {
+      "name": "choice_cursor",
+      "size": [
+        14,
+        18
+      ],
+      "transparent_outside": true
+    }
+  ],
+  "preview": {
+    "name": "dialogue_example",
+    "size": [
+      640,
+      480
+    ],
+    "transparent_outside": false
+  },
+  "notes": "PNG files are rendered from the matching editable SVGs. All panels are blank; preview text is example content only. No game scripts are included."
+}

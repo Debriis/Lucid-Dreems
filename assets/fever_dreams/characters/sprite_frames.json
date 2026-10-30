@@ -1,0 +1,79 @@
+{
+	"alpha": true,
+	"frame_size": [
+		512,
+		768
+	],
+	"strips": {
+		"ayush_witch/witch_chomp": {
+			"animation": "chomp",
+			"files": [
+				"ayush_witch/witch_chomp_00.png",
+				"ayush_witch/witch_chomp_01.png",
+				"ayush_witch/witch_chomp_02.png",
+				"ayush_witch/witch_chomp_03.png",
+				"ayush_witch/witch_chomp_04.png",
+				"ayush_witch/witch_chomp_05.png"
+			],
+			"fps": 7.14285714285714,
+			"frame_height": 768,
+			"frame_width": 512,
+			"frames": 6,
+			"hframes": 6,
+			"loop": true,
+			"vframes": 1
+		},
+		"patient/patient_talking": {
+			"animation": "talking",
+			"files": [
+				"patient/patient_talking_00.png",
+				"patient/patient_talking_01.png",
+				"patient/patient_talking_02.png",
+				"patient/patient_talking_03.png"
+			],
+			"fps": 5.55555555555556,
+			"frame_height": 768,
+			"frame_width": 512,
+			"frames": 4,
+			"hframes": 4,
+			"loop": true,
+			"vframes": 1
+		},
+		"performer/performer_frantic": {
+			"animation": "frantic",
+			"files": [
+				"performer/performer_frantic_00.png",
+				"performer/performer_frantic_01.png",
+				"performer/performer_frantic_02.png",
+				"performer/performer_frantic_03.png",
+				"performer/performer_frantic_04.png",
+				"performer/performer_frantic_05.png"
+			],
+			"fps": 8.33333333333333,
+			"frame_height": 768,
+			"frame_width": 512,
+			"frames": 6,
+			"hframes": 6,
+			"loop": true,
+			"vframes": 1
+		},
+		"performer/performer_idle": {
+			"animation": "idle",
+			"files": [
+				"performer/performer_idle_00.png",
+				"performer/performer_idle_01.png",
+				"performer/performer_idle_02.png",
+				"performer/performer_idle_03.png",
+				"performer/performer_idle_04.png",
+				"performer/performer_idle_05.png"
+			],
+			"fps": 6.25,
+			"frame_height": 768,
+			"frame_width": 512,
+			"frames": 6,
+			"hframes": 6,
+			"loop": true,
+			"vframes": 1
+		}
+	}
+}

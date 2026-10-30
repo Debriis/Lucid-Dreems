@@ -1,0 +1,5 @@
+The original source photograph is music_box_original.jpg, from The Metropolitan Museum of Art, Public Domain.
+music_box_cutout.png is a transparent-background AI-assisted edit made with the built-in image-generation tool. The original is supplied for comparison and further editing.
+
+Prompt:
+Use case: background-extraction. Edit the supplied photograph from The Met: remove ONLY the light gray background and the ground shadow. Leave the entire antique circular music box and its metal top ring isolated on true transparent background. Preserve the exact object, circular pocket-watch-style form, miniature figures, dark center mechanism, numeral dial, metal rim, grayscale photographic texture, original proportions and all subject details. Do not redraw as a wooden chest, do not invent parts, do not crop ring. Photographic cutout game prop. Transparent alpha outside object; no new shadows or text.

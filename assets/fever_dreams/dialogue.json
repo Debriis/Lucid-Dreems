@@ -1,0 +1,278 @@
+{
+  "title": "FEVER DREAMS",
+  "subtitle": "ONE MORE TURN",
+  "content_note": "Psychological horror with non-graphic references to childhood abuse and violated boundaries, pursuit, and death.",
+  "intro": [
+    {
+      "speaker": "ELI / PATIENT",
+      "text": "I keep telling everyone I'm doing better. It makes the conversation shorter.",
+      "choices": [
+        {
+          "text": "You can tell me how it actually is.",
+          "response": "I go to work. I eat something. I wait until I'm allowed to go back to bed. I don't know what I'm waiting for in between."
+        },
+        {
+          "text": "What's been hardest this week?",
+          "response": "My birthday. Twenty-eight. Everyone asked what I wanted. I couldn't think of anything, so I said a cake."
+        }
+      ]
+    },
+    {
+      "speaker": "ELI / PATIENT",
+      "text": "Then I sleep, and there's the house again. A little witch's cabin. It has my mother's wallpaper. She never lived in a place like that.",
+      "choices": [
+        {
+          "text": "Who else is in the cabin?",
+          "response": "A purple figure. Some kind of mechanical performer. It has a smile screwed onto its face. And a woman who takes up the whole window."
+        },
+        {
+          "text": "What happens when you get there?",
+          "response": "Someone says, 'One more turn.' The music starts. The performer tries very hard. I stay until the song is finished. It never is."
+        }
+      ]
+    },
+    {
+      "speaker": "ELI / PATIENT",
+      "text": "There are four music boxes. I know that without having counted them. If you let the springs unwind, they play something that happened.",
+      "choices": [
+        {
+          "text": "Have you opened one?",
+          "response": "The first one. The performer started shaking. The woman noticed me. I woke up before she got through the door."
+        },
+        {
+          "text": "What does the woman want?",
+          "response": "Everything put back. Everyone smiling. She calls that a good house."
+        }
+      ]
+    },
+    {
+      "speaker": "ELI / PATIENT",
+      "text": "You can really go in there with me?",
+      "choices": [
+        {
+          "text": "If you want me to. We can stop here.",
+          "response": "No. I'd like someone to see it. Just once. Someone who won't tell me I remembered it wrong."
+        },
+        {
+          "text": "Yes. I'll listen to what you find.",
+          "response": "All right. Don't make the performer dance for you. It thinks that's what people come to see."
+        }
+      ]
+    },
+    {
+      "speaker": "ELI / PATIENT",
+      "text": "If you find the small door, let me go first. I don't know why. I just know it's mine.",
+      "choices": [
+        {
+          "text": "All right. Close your eyes when you're ready.",
+          "response": "There's the music. Can you hear it yet?"
+        },
+        {
+          "text": "I'll meet you at the cabin.",
+          "response": "She's already set a place for you."
+        }
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "id": 0,
+      "name": "THE WITCH'S CABIN",
+      "kicker": "01 / PLEASE MAKE YOURSELF USEFUL",
+      "arrival": "A purple mechanical performer jerks through a frantic bow. Its feet stamp out a rhythm that the music has not reached yet.",
+      "inspect": {
+        "rabbit": "PERFORMER: Ladies and gentlemen. Ladies and gentlemen. Ladies and— Are you here for the show? I can begin again.",
+        "portrait": "THE HOST: Welcome, doctor. We keep a very good house. Nothing unpleasant stays out for long.",
+        "window": "The face beyond the glass is too large to belong to anyone standing outside.",
+        "door": "A brass plate: EVERY EXIT IS A RETURN. Smaller writing: management accepts no responsibility for missing guests.",
+        "note": "HOUSE PROGRAMME, 1938. Smile when spoken to. Put things back. If something breaks, think about what you did.",
+        "music_box": "An antique music box. Its key turns backward by itself. Hold it still, then let the spring unwind."
+      },
+      "box": {
+        "title": "BOX I / THE GOOD HOUSE",
+        "before": "The performer clutches the little stage. PERFORMER: If it plays the old number, please do not applaud.",
+        "choices": [
+          {
+            "text": "Let the spring unwind.",
+            "response": "The key slips through your fingers. The performer's jaw chatters with every note."
+          },
+          {
+            "text": "Tell the performer it doesn't have to perform.",
+            "response": "PERFORMER: I don't know what to do instead. You release the music-box key."
+          }
+        ],
+        "memory": [
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "I could tell which mood she was in from the way she put her keys down. I knew all the quiet floorboards."
+          },
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "When my mother hurt me, she said I'd made her do it. Afterward I had to tell her she was a good mother."
+          },
+          {
+            "speaker": "PERFORMER",
+            "text": "Was that the right answer? Nobody ever told me the right answer."
+          }
+        ],
+        "after": "The first spring falls silent. Something enormous knocks on the outside of the wall. THE HOST: Put that back."
+      }
+    },
+    {
+      "id": 1,
+      "name": "THE HALLWAY AFTER SCHOOL",
+      "kicker": "02 / THE BELL HAS BEEN CANCELLED",
+      "arrival": "The cabin door opens onto a corridor of school photographs. Every face has been replaced by the same smile.",
+      "inspect": {
+        "rabbit": "The performer is dressed for a school photograph. A bent metal finger keeps adjusting its collar.",
+        "portrait": "THE HOST: Children make things up. Such wonderful imaginations.",
+        "window": "Through the window: the witch's cabin. Through its window: you.",
+        "door": "The last classroom is numbered 2:00. Its handle is warm.",
+        "note": "A school report. The only legible sentence: NEEDS TO PARTICIPATE MORE.",
+        "music_box": "The second box sits on an empty desk. Someone has scratched NO into the underside of the lid."
+      },
+      "box": {
+        "title": "BOX II / AFTER THE BELL",
+        "before": "PERFORMER: There isn't a picture for this one. Don't go looking for one.",
+        "choices": [
+          {
+            "text": "Stay here and listen.",
+            "response": "You let the spring unwind. The photographs turn toward the wall."
+          },
+          {
+            "text": "We don't need to see it.",
+            "response": "The performer lowers its hands. You release the key. Only the voice comes through."
+          }
+        ],
+        "memory": [
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "Some older children cornered me after school. They touched me after I said no. I couldn't make them stop."
+          },
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "I tried to tell someone. The first question was why I'd gone with them. I stopped telling the story halfway through."
+          },
+          {
+            "speaker": "DOCTOR",
+            "text": "You said no. They chose not to listen. That wasn't your fault."
+          }
+        ],
+        "after": "The music stops. Footsteps continue. In every photograph, the same mouth opens. THE HOST: We don't repeat stories like that."
+      }
+    },
+    {
+      "id": 2,
+      "name": "THE TABLE IS SET",
+      "kicker": "03 / COMPLIMENTS TO THE HOST",
+      "arrival": "A dining table stretches through both walls. Every place card has Eli's name. One of the chairs is breathing.",
+      "inspect": {
+        "rabbit": "The performer serves empty plates with a frantic music-hall flourish. Between trips, its shoulders drop for half a second.",
+        "portrait": "THE HOST: Look at all the people who need you. Isn't it lovely to be needed?",
+        "window": "The face outside is closer. The glass bends around its teeth.",
+        "door": "You open the coat cupboard. Inside is another coat cupboard, slightly more disappointed in you.",
+        "note": "A stack of birthday cards. Each says: YOU ALWAYS KNOW HOW TO CHEER EVERYONE UP.",
+        "music_box": "The third music box is disguised as a place setting. Its spring keeps tightening when nobody touches it."
+      },
+      "box": {
+        "title": "BOX III / I'M FINE, THANK YOU",
+        "before": "PERFORMER: I'm very good company. Please write that down.",
+        "choices": [
+          {
+            "text": "You can put the plates down.",
+            "response": "The plates remain hanging in the air. You release the spring beneath them."
+          },
+          {
+            "text": "Tell me what you need.",
+            "response": "PERFORMER: I used to know. You let the music box unwind."
+          }
+        ],
+        "memory": [
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "I learned how to sound all right on the telephone. There's a little laugh you can do. People stop asking."
+          },
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "I cancelled things until the invitations stopped. Then I missed them. Both things were true."
+          },
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "I still care about them. I just can't keep making a version of myself that doesn't need anything."
+          }
+        ],
+        "after": "The third melody breaks into a single held note. The door starts to buckle. THE HOST: You're upsetting my guest, doctor."
+      }
+    },
+    {
+      "id": 3,
+      "name": "THE LITTLE STAGE",
+      "kicker": "04 / ONE SEAT REMAINS",
+      "arrival": "Back in the cabin, faded velvet curtains frame an empty stage. The ceiling is gone. The witch fills the sky. A small door waits under the footlights.",
+      "inspect": {
+        "rabbit": "The performer has stopped smiling. The expression underneath is ordinary, and very tired.",
+        "portrait": "The portrait is empty. Something has stepped out of the frame.",
+        "window": "There is no outside left. Her face covers every possible direction.",
+        "door": "A door just large enough for the performer. The name ELI has been scratched into the wood from the other side.",
+        "note": "A repair ticket: SMILE MECHANISM FUNCTIONAL. FAULT: KEEPS REQUESTING A BREAK. Beneath it, in smaller letters: REPLACEMENT ATTENDANT REQUIRED.",
+        "music_box": "The last spring is almost still. Its rhythm matches your pulse. There is no key to turn it back."
+      },
+      "box": {
+        "title": "BOX IV / THE PERSON WHO STAYED",
+        "before": "PERFORMER: I remember the little door now. She said I could leave when somebody else came to watch the house.",
+        "choices": [
+          {
+            "text": "Let the last spring unwind.",
+            "response": "The room holds its breath. The small door opens a fraction."
+          },
+          {
+            "text": "Eli goes first.",
+            "response": "The performer nods. You release the spring. Behind you, every other door disappears."
+          }
+        ],
+        "memory": [
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "I used to draw things with too many legs. I used to stay up because I wanted tomorrow to come. I remember wanting things."
+          },
+          {
+            "speaker": "ELI / MEMORY",
+            "text": "I don't expect one good night to fix me. I just wanted someone to believe I was still in here."
+          },
+          {
+            "speaker": "PERFORMER",
+            "text": "I think I can fit through. Doctor? Are you coming?"
+          }
+        ],
+        "after": "The performer passes through the little door. It closes before you can follow. A hand settles on your shoulder. THE HOST: Thank you for coming. We never leave the house unattended."
+      }
+    }
+  ],
+  "pursuit_lines": [
+    "THE HOST: Put that back.",
+    "THE HOST: We were having such a lovely time.",
+    "THE HOST: A guest should know when to be quiet.",
+    "THE HOST: You don't live here. You don't get to remember.",
+    "THE HOST: I can hear you thinking about the door.",
+    "THE HOST: One more turn."
+  ],
+  "ending": {
+    "title": "SESSION TERMINATED",
+    "lines": [
+      "The fourth music box reaches its final note.",
+      "Eli opens his eyes in the consultation room. The chair beside him is empty.",
+      "At 02:00, your heart stops. You do not wake up.",
+      "Inside the cabin, the witch sets the table for tomorrow.",
+      "The performer's stage is empty. A new portrait hangs above it.",
+      "It has your eyes."
+    ],
+    "last_line": "THE HOST: Welcome, doctor. One more turn."
+  },
+  "hints": [
+    "Four springs. Four memories. Let each music box unwind.",
+    "Inspect the room before touching the music box.",
+    "When the music ends, the witch comes closer. Find the next exit.",
+    "The performer moves with the melody. Watch what happens in the silence.",
+    "Eli's small door is not an exit for everyone."
+  ]
+}

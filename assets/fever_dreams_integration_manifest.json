@@ -1,0 +1,80 @@
+{
+  "supplied_files_verified": 576,
+  "runtime_textures": [
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/dungeon_door.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\dungeon_door.png",
+      "sha256": "333e6495d0627aa967af24c4b0490aa8db8a8cf795a2d0c0b0125f92464e3f2d"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/dungeon_left.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\dungeon_left.png",
+      "sha256": "856b87b0adda21d1d5c93b5f46286d37aa20ef7963bb3d06a5a557972552d447"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/dungeon_right.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\dungeon_right.png",
+      "sha256": "60a6d720cda48d83c438119267c75a28b89769fcd8e6d724152a0cf59d7f7c32"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/dungeon_wall.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\dungeon_wall.png",
+      "sha256": "f11e3baf392e6e520a068cdcdad47e3923221e2aff4f1b728d4be5bf8f87f746"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/dungeon_window.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\dungeon_window.png",
+      "sha256": "066b22178a9573ad4a82c2011551940be5412b791286bc0a14e946e5486838b8"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/kenney_door_wood.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\kenney_door_wood.png",
+      "sha256": "389bbda3c3a853e62891bdd0210ec63985c5cb4a47cd476bd07b5e2da9adf6b2"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/kenney_floor_tiles_blue_large.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\kenney_floor_tiles_blue_large.png",
+      "sha256": "aa0f9866666cac62d5261f3f5282cefaa50a1775d893b83b1435dbc347634e10"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/kenney_floor_wood_planks.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\kenney_floor_wood_planks.png",
+      "sha256": "56a7ea5713833dcde33e9ac11b3fc524cee7e8d9a195e2f8a42f94c59ac06185"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/kenney_wall_timber_structure.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\kenney_wall_timber_structure.png",
+      "sha256": "af81534e154aad57d9f6d9c031c55207006c0b9c0f1c3c92dea82ea0c0b003e4"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/wallpaper_01.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\wallpaper_01.png",
+      "sha256": "1081a4c99769fd295336c9c2c0c0df76a81d7adbfe138000c64433c5d8fb5b04"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/wallpaper_02.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\wallpaper_02.png",
+      "sha256": "64feaed15294abb2b2b905f1f4a3c658917f3dece976458eed9d1797c0cf6da2"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/wallpaper_03.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\wallpaper_03.png",
+      "sha256": "c22b810844588a43ac5c1a61ce74b893073be78c1424cbd5cdc5b8e5e151451f"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/wallpaper_04.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\wallpaper_04.png",
+      "sha256": "506a9132b8f249c7b42998fc621cd741fcbaaf35c3ff91184c50d19010da547a"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/wallpaper_05.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\wallpaper_05.png",
+      "sha256": "061f79804313300719745e3c5ec7314f2d6dbee42fbf8c79be59d53d031e6526"
+    },
+    {
+      "runtime_file": "assets/fever_dreams/textures/cabin/wallpaper_06.png",
+      "source_file": "C:\\Users\\Ayush\\OneDrive\\Desktop\\FEVER_DREAMS_ASSET_KIT\\backgrounds\\source\\assets\\textures\\wallpaper_06.png",
+      "sha256": "5511a181b638a77dc0edc8abe3af0d01d32712f5737378d6f95f5319ea291062"
+    }
+  ]
+}
