@@ -38,6 +38,11 @@ func finish() -> void:
 	restart.z_index = 60
 	restart.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	end_labels.append(restart)
+	var team := UI.label(Vector2(220, 493), Vector2(840, 150), 24)
+	team.text = "CREATED BY\nSreevalli pallapothu\nAyush (RA2411003010862)\nSamarth Ryan Edward"
+	team.z_index = 60
+	team.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	end_labels.append(team)
 	complete = true
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -1,0 +1,8 @@
+BANNER: 01-banner.png (1280 x 320)
+BACKGROUND: 02-background-tile.png (256 x 256). Choose Repeat/Tile if offered; do not stretch it.
+EMBED BG: 03-embed-bg.png (1280 x 720). Middle is reserved for the Run Game button.
+
+Page colours: BG #100B16 / BG2 #211629 / Text #EEE6CF / Link #D9E57B.
+
+These files were composed with Pillow from real in-engine screenshots, the existing wallpaper texture, and the game's actual fonts. No new image generation was used. Some existing game art was originally AI-assisted; these are direct presentations of the game, not newly illustrated scenes.
+Source assets and fonts retain their original credits in the project.

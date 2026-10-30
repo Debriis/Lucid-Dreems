@@ -626,6 +626,7 @@ func update_status() -> void:
 		box_sign.text = "MEMORY %02d / HEARD" % room_id if complete else "MUSIC BOX %02d\nTURN THE KEY BACKWARD" % room_id
 
 func _physics_process(delta: float) -> void:
+	Game.set_chase_music(not failed and not transitioning and ((chase_remaining > 0.0 and not Game._silence_locked) or (final_escape and not ending_started)))
 	var blocked := UI.busy or UI.menu_open or unwinding or scare_active or failed or UI._transition_phase != 0
 	sync_vitals()
 	reticle.visible = not blocked
@@ -1050,6 +1051,7 @@ func decorate_room() -> void:
 		block(world, "PortraitBack", frame.position - Vector3(0, 0, 0.025), Vector3(0.96, 1.26, 0.04), trim)
 
 func _exit_tree() -> void:
+	Game.set_chase_music(false)
 	UI.set_unwind_progress(0.0, false)
 	if is_instance_valid(reticle):
 		reticle.queue_free()

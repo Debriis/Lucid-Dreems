@@ -10,6 +10,7 @@ const CHATTER_BANK = preload("res://audio/chatter/chatter_bank.gd")
 const CHATTER_RATE := 24000
 const MUSIC_SPOOKY := "res://assets/fever_dreams/audio/musicbox1_spooky_waltz.ogg"
 const MUSIC_SAD := "res://assets/fever_dreams/audio/musicbox3_sad_tune.ogg"
+const MAIN_SCORE := "res://audio/music/general_release_loop.ogg"
 const DEFAULT_SETTINGS := {
 	"master_volume": 0.85, "music_volume": 0.65, "voice_volume": 1.0, "sfx_volume": 0.75,
 	"music_muted": false, "voice_muted": false, "sfx_muted": false, "reduced_effects": false,
@@ -19,6 +20,7 @@ var memories: Dictionary = {}
 var crossings := 0
 var ending := ""
 var music: AudioStreamPlayer
+var score: AudioStreamPlayer
 var voice: AudioStreamPlayer
 var cues: Dictionary = {}
 var active_player: Node
@@ -37,6 +39,11 @@ var _unwinding := false
 var _music_base_db := -17.0
 var _quitting := false
 var _scare_duck_left := 0.0
+var _score_base_db := -8.0
+var _cue_duck_left := 0.0
+var _title_music := false
+var _chase_music := false
+var score_context := ""
 
 func _ready() -> void:
 	# A window close follows the same audio-drain path as the menu Quit action.
@@ -66,6 +73,16 @@ func _ready() -> void:
 	music.stream = load(MUSIC_SPOOKY)
 	music.volume_db = _music_base_db
 	add_child(music)
+	score = AudioStreamPlayer.new()
+	score.name = "MainSoundtrack"
+	score.bus = "Music"
+	var soundtrack: AudioStreamOggVorbis = load(MAIN_SCORE)
+	soundtrack.loop = true
+	# The tail crossfades into the first two seconds; continue from that point.
+	soundtrack.loop_offset = 2.0
+	score.stream = soundtrack
+	score.volume_db = -60.0
+	add_child(score)
 	voice = AudioStreamPlayer.new()
 	voice.name = "DialogueVoice"
 	voice.bus = "Voice"
@@ -99,14 +116,55 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if _quitting:
 		return
+	_update_score_context()
 	# Dialogue gently lowers the song without changing the player's volume setting.
 	if not _audio_paused:
 		_scare_duck_left = maxf(0.0, _scare_duck_left - delta)
+		_cue_duck_left = maxf(0.0, _cue_duck_left - delta)
 	var duck_db := 8.0 if voice_is_playing() else 0.0
 	if _scare_duck_left > 0.0:
 		duck_db = maxf(duck_db, 12.0)
 	var target_db := _music_base_db - duck_db
+	if not score_context.is_empty():
+		target_db = -60.0 # Crossfade away from the original melody during a chase.
 	music.volume_db = lerpf(music.volume_db, target_db, minf(delta * 7.0, 1.0))
+	if score.playing:
+		var score_duck := 12.0 if voice_is_playing() else 0.0
+		if _unwinding and not _audio_paused:
+			score_duck = maxf(score_duck, 18.0)
+		if _scare_duck_left > 0.0 and not _audio_paused:
+			score_duck = maxf(score_duck, 20.0)
+		elif _cue_duck_left > 0.0 and not _audio_paused:
+			score_duck = maxf(score_duck, 5.0)
+		var score_target := -60.0 if score_context.is_empty() else _score_base_db - score_duck
+		var rate := 22.0 if score_target < score.volume_db else 1.5
+		score.volume_db = lerpf(score.volume_db, score_target, 1.0 - exp(-rate * delta))
+		if score_context.is_empty() and score.volume_db <= -59.5:
+			score.stop()
+
+func _update_score_context() -> void:
+	var next := ""
+	if _audio_paused and not UI._failure_active:
+		next = "pause"
+	elif _title_music:
+		next = "title"
+	elif _chase_music and not _audio_paused:
+		next = "chase"
+	score_context = next
+	if not next.is_empty():
+		_start_score(-2.0 if next == "title" else (-8.0 if next == "pause" else -6.0))
+
+func set_chase_music(active: bool) -> void:
+	_chase_music = active
+
+func _start_score(level: float) -> void:
+	if _quitting:
+		return
+	_score_base_db = level
+	if not score.playing:
+		score.volume_db = -60.0
+		score.play()
+	score.stream_paused = false # Pause freezes the world, but plays its own menu music.
 
 func _load_voice_manifest() -> void:
 	# A script resource keeps this data in exported games without JSON export filters.
@@ -223,6 +281,8 @@ func voice_level() -> float:
 
 func play_cue(cue: String) -> void:
 	if not _quitting and cues.has(cue):
+		if cue in ["wind", "rattle", "dream"]:
+			_cue_duck_left = 0.65
 		cues[cue].play()
 		cues[cue].stream_paused = _audio_paused
 
@@ -236,23 +296,28 @@ func play_scare(kind: String) -> void:
 	sound.volume_db = (0.0 if kind == "catch" else -4.0) - (9.0 if reduced_effects else 0.0)
 	sound.play()
 	_scare_duck_left = 0.75 if kind == "catch" else 0.35
+	score.volume_db = minf(score.volume_db, _score_base_db - 20.0)
 
 func stop_cues() -> void:
 	_scare_duck_left = 0.0
+	_cue_duck_left = 0.0
 	for sound in cues.values():
 		sound.stop()
 
 func play_music_box(dream: bool) -> void:
 	if _silence_locked:
 		return
+	_title_music = false
 	_begin_music(MUSIC_SAD if dream else MUSIC_SPOOKY, -17.0)
 
 func play_menu_music() -> void:
 	if _quitting:
 		return
 	_silence_locked = false
+	_title_music = true
 	set_audio_paused(false)
-	_begin_music(MUSIC_SPOOKY, -21.0)
+	music.stop()
+	_update_score_context()
 
 func _begin_music(path: String, volume: float) -> void:
 	if _quitting:
@@ -280,6 +345,7 @@ func set_audio_paused(value: bool) -> void:
 		sound.stream_paused = value
 	for ambient in get_tree().get_nodes_in_group("dream_audio"):
 		ambient.stream_paused = value
+	_update_score_context()
 
 func bind(action: String, keys: Array) -> void:
 	for key in keys:
@@ -291,6 +357,8 @@ func bind(action: String, keys: Array) -> void:
 func travel(path: String) -> void:
 	if _quitting:
 		return
+	_title_music = false
+	_chase_music = false
 	# A departed room cannot resume a pending reverse phrase after its coroutine wakes.
 	audio_generation += 1
 	if _unwinding:
@@ -339,9 +407,13 @@ func return_to_menu() -> void:
 func silence() -> void:
 	audio_generation += 1
 	_silence_locked = true
+	_title_music = false
+	_chase_music = false
+	score_context = ""
 	_unwinding = false
 	music.stop()
 	music.pitch_scale = 1.0
+	score.stop()
 	stop_voice()
 	stop_cues()
 	for ambient in get_tree().get_nodes_in_group("dream_audio"):
@@ -350,7 +422,7 @@ func silence() -> void:
 func unwind_music(id: int) -> void:
 	if _silence_locked or _quitting:
 		return
-	play_music_box(id > 1)
+	_begin_music(MUSIC_SAD if id > 1 else MUSIC_SPOOKY, -13.0)
 	audio_generation += 1
 	var generation := audio_generation
 	_unwinding = true
@@ -417,6 +489,9 @@ func _apply_settings() -> void:
 		AudioServer.set_bus_mute(index, volume <= 0.0 or bool(_settings.get(key + "_muted", false)))
 
 func request_quit(exit_code: int = 0) -> void:
+	if OS.has_feature("web"):
+		JavaScriptBridge.eval("window.location.reload();")
+		return
 	if _quitting:
 		return
 	_quitting = true
@@ -431,7 +506,7 @@ func request_quit(exit_code: int = 0) -> void:
 
 func _release_audio_streams() -> void:
 	audio_generation += 1
-	for sound in [music, voice]:
+	for sound in [music, score, voice]:
 		if is_instance_valid(sound):
 			sound.stop()
 			sound.stream = null

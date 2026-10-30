@@ -1,7 +1,27 @@
 # Audio
 
-The menu and first dream room play `musicbox1_spooky_waltz.ogg`; later dream
-rooms use `musicbox3_sad_tune.ogg`. These are existing CC0 tracks by
+The supplied Buckshot Roulette OST - General Release (extended) is used ONLY
+on the title screen, in pause menus, and during Ayush's active pursuits.
+Ordinary exploration restores the original spooky waltz in room one and sad
+tune in later rooms. Consultation keeps its original quiet clock sounds.
+
+The new song is in music/general_release_loop.ogg. It measures -18.45 LUFS
+integrated and -5.63 dBTP after gain adjustment, a 35 Hz high-pass and a gentle
+2 dB speech-range dip. Its tail crossfades into its opening two seconds; Godot
+resumes loops at 2.0 seconds. Title/pause/chase levels are -2/-8/-6 dB before
+the user's Music/Master settings. Speech ducks it 12 dB, unwinding 18 dB and
+scares 20 dB. Original melodies crossfade out during pursuit and back afterward.
+Pause freezes world audio but keeps pause music playing. Closing pause restores
+the previous context. The fourth box falls silent; the final moving pursuit
+uses the chase track, then the ending returns to silence.
+
+The supplied Buckshot recording is not part of the CC0 stock library; no
+redistribution license accompanied that supplied file. Confirm permission for
+that recording before publishing a build that contains it.
+
+The original music-box tracks are musicbox1_spooky_waltz.ogg and
+musicbox3_sad_tune.ogg.
+These are existing CC0 tracks by
 Aureolus_Omicron, from https://opengameart.org/content/4-music-box-tracks.
 Original tracks, MIDI, credit, and licenses remain in `assets/fever_dreams`.
 Speech automatically lowers the song by 8 dB, then restores the chosen level.

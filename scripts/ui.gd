@@ -640,9 +640,17 @@ func show_settings() -> void:
 	_focus_first()
 
 func show_credits() -> void:
-	_open_modal("credits", "THE PEOPLE OUTSIDE", "THE LAST LULLABY / a short fever dream")
-	_modal_label("Created by the jam team.\nBuilt in Godot. Patient: synthetic Microsoft David voice.\n\nTextures: Screaming Brain Studios / Kenney\nMusic box tracks: Aureolus_Omicron / OpenGameArt\nV2 heads, music box and UI supplied by the jam team.\n\nDotGothic16: Fontworks / SIL Open Font License\nRubik Glitch: NaN / SIL Open Font License\nSpecial Elite: Astigmatic / Apache License 2.0\n\nFull asset sources and licenses are included with the project.", Vector2(310, 228), Vector2(665, 340), 20)
+	_open_modal("credits", "THE PEOPLE OUTSIDE", "THE LAST LULLABY / created by")
+	_modal_label("Sreevalli pallapothu\nAyush (RA2411003010862)\nSamarth Ryan Edward", Vector2(310, 240), Vector2(665, 160), 30)
+	_modal_label("A short fever dream, made together in Godot.", Vector2(310, 422), Vector2(665, 42), 20)
+	_menu_button("ASSET / AUDIO / FONT CREDITS  >", Vector2(310, 490), Vector2(660, 52), show_asset_credits, 23)
 	_menu_button("<  BACK", Vector2(310, 577), Vector2(660, 48), _modal_back)
+	_focus_first()
+
+func show_asset_credits() -> void:
+	_open_modal("asset_credits", "THE THINGS INSIDE", "TOOLS / MUSIC / MATERIALS")
+	_modal_label("Engine: Godot. Patient voice: synthetic Microsoft David.\nTextures: Screaming Brain Studios / Kenney\nMusic boxes: Aureolus_Omicron / OpenGameArt\nMain score: Buckshot Roulette OST / General Release\nCharacter likenesses and replacement assets: the team.\nDotGothic16: Fontworks / SIL Open Font License\nRubik Glitch: NaN / SIL Open Font License\nSpecial Elite: Astigmatic / Apache License 2.0\nAI-assisted art, writing and code. Licenses in the project.", Vector2(310, 228), Vector2(665, 330), 20)
+	_menu_button("<  DEVELOPERS", Vector2(310, 577), Vector2(660, 48), show_credits)
 	_focus_first()
 
 func _menu_input(event: InputEvent) -> void:

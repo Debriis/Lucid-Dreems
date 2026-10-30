@@ -56,7 +56,7 @@ func _ready() -> void:
 	_paper(Vector2(789, 580), Vector2(448, 83), Color("241a2e"), -0.018)
 	_note = _label("HE KEPT YOU SAFE ONCE.\nLET HIM TRY AGAIN.", Vector2(806, 594), Vector2(420, 63), 21, CLINICAL_FONT, ACID)
 	_note.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var entries := ["BEGIN SESSION", "HOW TO PLAY", "SETTINGS", "CREDITS", "QUIT"]
+	var entries := ["BEGIN SESSION", "HOW TO PLAY", "SETTINGS", "CREDITS", "RELOAD GAME" if OS.has_feature("web") else "QUIT"]
 	var actions: Array[Callable] = [UI.begin_session, UI.show_help, UI.show_settings, UI.show_credits, _quit_game]
 	for i in range(entries.size()):
 		var button := Button.new()
@@ -131,7 +131,7 @@ func _hover(index: int) -> void:
 
 func _select(index: int) -> void:
 	_selected = index
-	var entries := ["BEGIN SESSION", "HOW TO PLAY", "SETTINGS", "CREDITS", "QUIT"]
+	var entries := ["BEGIN SESSION", "HOW TO PLAY", "SETTINGS", "CREDITS", "RELOAD GAME" if OS.has_feature("web") else "QUIT"]
 	for i in range(_buttons.size()):
 		_buttons[i].text = (">  " if i == index else "   ") + entries[i]
 		var color := Color("201820")

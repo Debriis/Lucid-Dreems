@@ -101,6 +101,13 @@ func run() -> void:
 	await capture("ayush-chamber")
 	var chamber: Node = get_tree().current_scene
 	check(chamber.health == 100 and chamber.room_time_left > 118.0, "New room restores health and its clock")
+	chamber.begin_chase()
+	await frames(8)
+	check(Game.score.playing and Game.score_context == "chase", "Actual witch pursuit switches soundtrack")
+	chamber.chase_remaining = 0
+	chamber.chamber_alert_cooldown = 30
+	await frames(30)
+	check(not Game.score.playing and Game.music.playing, "Pursuit ending restores room music")
 	chamber.player.position = Vector3(6.5 * chamber.CELL, 0, 8.0 * chamber.CELL)
 	chamber.health = 20
 	chamber.room_time_left = 0

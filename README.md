@@ -1,4 +1,4 @@
-# THE LAST LULLABY
+# THE LAST LALA-BYE
 
 A local Godot psychological-horror jam game. You are the sleep doctor, entering a patient's recurring nightmare. Four music boxes hold the dream together. Unwind them while Rue protects you from Ayush and the house's countdown.
 
@@ -8,6 +8,7 @@ A local Godot psychological-horror jam game. You are the sleep doctor, entering 
 
 - Open `project.godot` in Godot **4.6.1** and press **F5**. The project starts at the title menu.
 - The Windows export preset writes `../Build/TheLastLullaby.exe`.
+- The **Web** export preset writes `../ItchRelease/Web/index.html`. This single-threaded WebGL 2 build runs in a desktop browser without installing Godot. Web audio uses streaming to avoid decoding the long soundtrack into oversized sample buffers.
 - No network, runtime TTS installation, or extra game dependencies are required after importing/exporting.
 
 ## Controls and objective
@@ -33,9 +34,11 @@ All active dream character art uses the supplied V2 PNG heads; the witch alterna
 
 The 3D world is rendered at 320 x 180 and enlarged with nearest filtering; the 1280 x 720 UI remains readable. Chipped paper panels, detached speaker/choice pieces, pink/acid accents and three fonts replace the default text treatment: DotGothic16 for dialogue, Special Elite for clinical labels, Rubik Glitch for titles. The original structural room textures remain in use.
 
-Twenty-four patient lines are included as local WAVs using synthetic **Microsoft David Desktop**, lightly slowed/pitched and textured. They are not a clone of the photographed person's voice. Advancing stops the previous line, pause holds playback, and music ducks during speech. The licensed music-box tracks play in the menu/dream, slow and reverse during unwinding, and stop after the fourth box. The final patient line still plays after the dream falls silent. Two original scare stingers use the SFX/master volume settings and do not stack or clip. Normal Quit and window close release audio before exiting.
+Twenty-four patient lines are included as local WAVs using synthetic **Microsoft David Desktop**, lightly slowed/pitched and textured. They are not a clone of the photographed person's voice. Advancing stops the previous line, pause holds playback, and music ducks during speech. The original CC0 music-box melodies play during ordinary exploration and slow and reverse during unwinding. The final patient line still plays after the dream falls silent. Two original scare stingers use the SFX/master volume settings and do not stack or clip. Normal Quit and window close release audio before exiting.
 
 Everyone else speaks in original Animalese-like syllables assembled to the subtitle's rhythm. The doctor has a dry, lower mutter, Rue a high mechanical chatter, and Ayush a rough low voice with reversed syllables. These share the voice-volume and pause/advance controls; they never animate the patient's portrait. The subtitles remain the source of the actual words.
+
+The main background song is the supplied **Buckshot Roulette OST — General Release (extended)**, balanced with a softened speech-frequency range and a crossfaded loop. It plays only on the main menu, during pause, and during Ayush pursuits. Ordinary exploration uses the original music, and the consultation stays quiet. It ducks beneath dialogue, music-box interactions and scares, then stops after the final pursuit. Its volume follows the existing Music slider.
 
 ## Story and implementation
 
@@ -51,12 +54,14 @@ The canonical suite exercises startup, keyboard/mouse choices, movement/collisio
 
 ```powershell
 godot --headless --path . --editor --import --quit
-godot --headless --path . --fixed-fps 60 res://tests/Smoke.tscn
-godot --path . --fixed-fps 60 res://tests/Smoke.tscn -- --capture
-godot --path . --fixed-fps 60 res://tests/PresentationReview.tscn -- --capture
+godot --headless --path . --max-fps 60 res://tests/Smoke.tscn
+godot --path . --max-fps 60 res://tests/Smoke.tscn -- --capture
+godot --path . --max-fps 60 res://tests/PresentationReview.tscn -- --capture
 godot --headless --path . res://tools/AudioChatterSmoke.tscn
 godot --headless --path . res://tools/AudioScareSmoke.tscn
 godot --headless --path . --export-release "Windows Desktop" ../Build/TheLastLullaby.exe
+godot --headless --path . --export-release Web ../ItchRelease/Web/index.html
+python tools/package_web.py ../ItchRelease/Web ../ItchRelease/TheLastLullaby-HTML5-v0.2.1.zip
 ```
 
 Review captures are written under `.tools/captures` and `.tools/review` and are excluded from version control. Historical prototype scripts and original assets remain available but are not the startup route.
@@ -70,3 +75,24 @@ Review captures are written under `.tools/captures` and `.tools/review` and are 
 - Audio source, speech processing and reproduction steps: `audio/README.md` and `tools/generate_patient_voice.ps1` / `tools/voice_envelopes.py`.
 
 This is still a short jam game: fixed-height grid environments, stylized sprite actors and scripted pursuits/ending; no save system or combat.
+
+## Browser-only itch.io package
+
+Upload `TheLastLullaby-HTML5-v0.2.1.zip` as an **HTML Game** and select **This file will be played in the browser**. Keep `index.html` at the ZIP root. Use a 1280 x 720 embed, Click to Play and a fullscreen button. Leave SharedArrayBuffer and Mobile Friendly disabled. Do not add the Windows ZIP if the page should be browser-only. Full instructions and page copy are in the adjacent `ItchRelease` folder. The browser game is now available at https://sammy-ryed.itch.io/the-last-lala-bye.
+
+Web smoke review covers the menu, intro, branching reply, dream entrance, movement and pause/resume in Chromium on this laptop; the full route suite runs natively. Other browsers and devices have not been verified. The supplied Buckshot Roulette soundtrack still needs redistribution permission before public release.
+
+## Developers
+
+- Sreevalli pallapothu
+- Ayush (RA2411003010862)
+- Samarth Ryan Edward
+
+
+## Published page and launch materials
+
+**[Play The Last Lala-Bye on itch.io](https://sammy-ryed.itch.io/the-last-lala-bye)**
+
+The itch title is The Last Lala-Bye; existing builds and art retain The Last Lullaby naming. Source files, credits, Web export and soundtrack updates are included here. Final screenshots, trailer, cover and the screenshot-based itch theme are in [`promo/`](promo/README.md). The published first devlog is archived in [`docs/first-devlog.md`](docs/first-devlog.md). Packaging-time validation reports and publishing notes are in `docs/release-v0.2.1/`.
+
+Godot ignores the `promo/` and `docs/` directories so promotional media is not imported into game builds. Rebuild exports using the commands above; compiled ZIPs, editor caches and temporary captures remain outside source control.

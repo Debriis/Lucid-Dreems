@@ -1,0 +1,28 @@
+THE LAST LULLABY
+
+Created by:
+Sreevalli pallapothu
+Ayush (RA2411003010862)
+Samarth Ryan Edward
+ Based on Debriis/Lucid-Dreems:
+https://github.com/Debriis/Lucid-Dreems
+Current project: https://github.com/sammy-ryed/the-last-lullaby
+
+Engine: Godot 4.6.1; see licenses/Godot-LICENSE.txt and Godot-THIRD-PARTY.txt.
+Textures: Screaming Brain Studios and Kenney (CC0 stock packs).
+Music-box melodies: Aureolus_Omicron, 4 Music Box Tracks (CC0), OpenGameArt.
+Menu/pause/pursuit recording: Buckshot Roulette OST — General Release
+(extended), supplied by the project team. Separate from the CC0 stock music.
+Music-box reference photograph: The Metropolitan Museum of Art,
+Music Box, Swiss, circa 1820, object 1976.285.30a,b (Public Domain source).
+Character likenesses and replacement artwork: supplied by the team.
+Patient voice: synthetic Microsoft David Desktop; not a clone of the actor.
+Other voices and sound effects: original synthesized syllables and cues.
+AI assistance was used for visual assets, writing and code.
+
+Fonts:
+DotGothic16 — Fontworks / SIL Open Font License.
+Rubik Glitch — NaN / SIL Open Font License.
+Special Elite — Astigmatic / Apache License 2.0.
+
+Stock-asset provenance and original license notices are in licenses/.
