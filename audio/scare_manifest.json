@@ -1,0 +1,20 @@
+[
+  {
+    "name": "scare_catch.wav",
+    "duration_seconds": 0.7,
+    "sample_rate": 24000,
+    "channels": 1,
+    "peak_dbfs": -2.16,
+    "source": "Original deterministic sine/filtered-noise synthesis",
+    "generator": "tools/generate_scares.py"
+  },
+  {
+    "name": "scare_glimpse.wav",
+    "duration_seconds": 0.3,
+    "sample_rate": 24000,
+    "channels": 1,
+    "peak_dbfs": -3.35,
+    "source": "Original deterministic sine/filtered-noise synthesis",
+    "generator": "tools/generate_scares.py"
+  }
+]

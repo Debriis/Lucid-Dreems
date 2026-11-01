@@ -1,0 +1,23 @@
+THE LAST LULLABY v0.2.1 — CREDITS AND PROMO VALIDATION
+
+Developer names added to title/pause credits, ending, CREDITS.txt, README,
+itch page copy, trailer closing card and YouTube description.
+Developer and asset credits are separate readable pages.
+Native rendered captures reviewed: names, layout, patient, Ayush, Rue, music box.
+Browser release tested: title > Credits > Asset credits; 0 console errors/warnings.
+Web and Windows release exports completed without script errors.
+Web ZIP CRC validated, root index.html present; 19 files / 63,214,245 bytes.
+Both packages contain current CREDITS.txt. Prior v0.2.0 builds retained.
+
+Trailer: 44.300s / 1920x1080 / 30fps / H.264 / AAC 48kHz stereo.
+Actual in-engine scenes and mechanics, with staged camera moves and editing.
+Native footage 1280x720 upscaled using nearest-neighbour to retain retro pixels.
+Final AAC measured -18.50 LUFS integrated, -1.36 dBTP (no full-scale clipping).
+Complete patient line preserved; music ducks under voices and game effects.
+Trailer soundtrack uses the CC0 music-box melody and original game effects.
+No Buckshot Roulette recording in the trailer. It remains in the game build,
+whose soundtrack redistribution permission is still unresolved.
+
+The full gameplay route was not rerun for this credits-only code change.
+Earlier v0.2.0 route/audio/presentation checks remain documented separately.
+Nothing uploaded to itch.io, YouTube or GitHub for this revision.

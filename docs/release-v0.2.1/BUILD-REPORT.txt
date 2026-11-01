@@ -1,0 +1,17 @@
+THE LAST LULLABY v0.2.0 — LOCAL RELEASE CANDIDATE
+
+Validation:
+- Full four-room canonical gameplay route: 210 checks, 0 failures.
+- Native audio-context routing: 22 checks, 0 failures.
+- Native presentation and actual pursuit transitions: 22 checks, 0 failures.
+- Windows export completed successfully.
+- ZIP extracted into a separate test folder; executable hash matches export.
+- Extracted executable opened its game window and closed normally, exit code 0.
+- No script/runtime errors in extracted-build startup/shutdown log.
+- Cover visually reviewed at 630 x 500; five gameplay screenshots supplied.
+
+Platform tested: Windows laptop, Godot 4.6.1 Compatibility/OpenGL,
+NVIDIA RTX 3050 Laptop GPU. Other Windows hardware has not been tested.
+
+Publishing: nothing uploaded or pushed. Soundtrack redistribution permission
+is still unverified; see PUBLISHING-NOTES.md before public release.

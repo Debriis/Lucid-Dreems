@@ -2,3 +2,5 @@
 .godot/
 /android/
 .tools/
+.playwright-cli/
+output/playwright/

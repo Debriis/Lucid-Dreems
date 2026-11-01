@@ -1,0 +1,32 @@
+THE LAST LULLABY — HTML5 v0.2.0 LOCAL CANDIDATE
+
+Archive: TheLastLullaby-HTML5-v0.2.0.zip
+Engine: Godot 4.6.1, WebGL 2 Compatibility, single-threaded.
+Web audio: Stream backend; fixed sample-buffer allocation failure for long OST.
+Root entry: index.html. Archive CRC verified. 19 files including credits/licenses.
+Archive size: 63,212,614 bytes (60.3 MiB).
+itch limits checked: fewer than 1000 files, total below 500 MB, each below
+200 MB, relative paths <= 240 characters.
+
+Browser smoke checks: Chromium, Windows development laptop, localhost HTTP
+without cross-origin isolation or special headers.
+- Title renders, buttons and browser-specific RELOAD GAME work.
+- Intro explains Sleep Doctor role and four music boxes.
+- Dialogue choices render; WHO ELSE IS THERE produces the Rue-specific reply.
+- Consultation transitions to 3D dream; Rue visible at entrance.
+- WASD movement changes position; mouse capture and Escape pause work.
+- Resume restores exploration; health/timer and objectives visible.
+- No new runtime errors after switching web playback from Sample to Stream.
+- Clean final-export reload: no browser console errors; runtime requests succeed.
+- Browser captures retained in repository output/playwright (not shipped).
+
+Earlier native validation of the game systems:
+- Full canonical route: 210 checks, 0 failures.
+- Score routing: 22 checks, 0 failures.
+- Presentation/pursuit: 22 checks, 0 failures.
+
+Limits of this review: not a complete manual browser playthrough; no actual
+itch.io embed, alternate browser, mobile or other hardware test performed.
+The actual itch draft still needs an embed preview after upload.
+Soundtrack redistribution permission remains unverified.
+Nothing uploaded/published or pushed for this revision.

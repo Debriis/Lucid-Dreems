@@ -1,0 +1,182 @@
+[
+  {
+    "file": "characters/ayush_grain_closed.png",
+    "dimensions": [
+      1322,
+      1190
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "characters/ayush_grain_open.png",
+    "dimensions": [
+      1323,
+      1189
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "characters/ayush_neutral_base.png",
+    "dimensions": [
+      1321,
+      1191
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "characters/patient_grain_sad.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "characters/patient_neutral_base.png",
+    "dimensions": [
+      1262,
+      1246
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "characters/purple_performer_head.png",
+    "dimensions": [
+      1280,
+      1229
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "props/music_box_closed.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "props/music_box_open.png",
+    "dimensions": [
+      1312,
+      1199
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "ui/choice_cursor.png",
+    "dimensions": [
+      14,
+      18
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "ui/choice_panel.png",
+    "dimensions": [
+      360,
+      142
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "ui/continue_arrow.png",
+    "dimensions": [
+      20,
+      14
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "ui/dialogue_example.png",
+    "dimensions": [
+      640,
+      480
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "ui/dialogue_panel.png",
+    "dimensions": [
+      640,
+      144
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "ui/selected_row.png",
+    "dimensions": [
+      344,
+      30
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "ui/unselected_row.png",
+    "dimensions": [
+      344,
+      30
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      204
+    ]
+  }
+]
